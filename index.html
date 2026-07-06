@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TOSCA Training by HD Bhardwaj | Tricentis Tosca Test Automation Institute</title>
+<meta name="description" content="Master Tricentis Tosca test automation with expert-led training by HD Bhardwaj. Live projects, certification guidance (AS1, AS2, AE), interview preparation and placement support. Call +91-6364542036.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0A1930;
+  --ink-2:#122647;
+  --blue:#1B5BFF;
+  --blue-deep:#0E3FBE;
+  --green:#19B36B;
+  --amber:#FFB703;
+  --slate:#5A6B85;
+  --paper:#F6F8FB;
+  --line:#E3E9F2;
+  --white:#FFFFFF;
+  --radius:14px;
+  --shadow:0 10px 30px rgba(10,25,48,.10);
+  --shadow-lg:0 24px 60px rgba(10,25,48,.16);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'IBM Plex Sans',system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;font-size:16px}
+h1,h2,h3,h4{font-family:'Sora',sans-serif;line-height:1.18;letter-spacing:-.01em}
+img{max-width:100%}
+a{color:inherit;text-decoration:none}
+.container{max-width:1180px;margin:0 auto;padding:0 24px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:14px}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--blue)}
+.section{padding:88px 0}
+.section-head{max-width:640px;margin-bottom:48px}
+.section-head h2{font-size:clamp(28px,3.6vw,40px);font-weight:800;margin-bottom:12px}
+.section-head p{color:var(--slate);font-size:17px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:10px;font-family:'Sora',sans-serif;font-weight:700;font-size:15px;cursor:pointer;border:0;transition:transform .15s ease, box-shadow .15s ease, background .15s ease}
+.btn:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
+.btn-primary{background:var(--blue);color:#fff;box-shadow:0 8px 20px rgba(27,91,255,.35)}
+.btn-primary:hover{background:var(--blue-deep);transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+.btn-ghost:hover{border-color:var(--blue);color:var(--blue)}
+.btn-light{background:#fff;color:var(--ink)}
+.btn-light:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+
+/* ---------- Top bar + nav ---------- */
+.topbar{background:var(--ink);color:#C9D6EA;font-size:13.5px;padding:8px 0}
+.topbar .container{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.topbar a{color:#fff;font-weight:600}
+.topbar a:hover{color:var(--amber)}
+.topbar-left{display:flex;gap:20px;flex-wrap:wrap}
+nav.main{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav.main .container{display:flex;align-items:center;justify-content:space-between;height:74px;gap:16px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand-mark{width:44px;height:44px;border-radius:11px;background:linear-gradient(135deg,var(--blue),var(--blue-deep));display:grid;place-items:center;color:#fff;font-family:'Sora',sans-serif;font-weight:800;font-size:15px;box-shadow:0 6px 16px rgba(27,91,255,.35)}
+.brand-text{line-height:1.15}
+.brand-text b{font-family:'Sora',sans-serif;font-size:17px;display:block}
+.brand-text span{font-size:12px;color:var(--slate);font-family:'IBM Plex Mono',monospace;letter-spacing:.06em}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{font-weight:600;font-size:15px;color:var(--ink-2);position:relative;padding:4px 0}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--blue);transition:width .2s ease}
+.nav-links a:hover::after{width:100%}
+.nav-cta{display:flex;align-items:center;gap:14px}
+.nav-phone{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:14px;color:var(--ink)}
+.menu-btn{display:none;background:none;border:1.5px solid var(--line);border-radius:8px;padding:8px 12px;font-size:18px;cursor:pointer}
+
+/* ---------- Hero ---------- */
+.hero{background:radial-gradient(1200px 600px at 85% -10%,rgba(27,91,255,.18),transparent 60%),linear-gradient(180deg,var(--ink) 0%,var(--ink-2) 100%);color:#fff;overflow:hidden;position:relative}
+.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:44px 44px;mask-image:radial-gradient(800px 500px at 30% 30%,#000 40%,transparent 100%)}
+.hero .container{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;padding-top:84px;padding-bottom:96px}
+.hero-badges{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px}
+.pill{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;letter-spacing:.06em;padding:6px 13px;border-radius:999px;border:1px solid rgba(255,255,255,.22);color:#D7E2F5;background:rgba(255,255,255,.06)}
+.hero h1{font-size:clamp(34px,4.6vw,54px);font-weight:800;margin-bottom:18px}
+.hero h1 .hl{color:var(--amber)}
+.hero p.lead{color:#B9C7DD;font-size:18px;max-width:520px;margin-bottom:32px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px}
+.hero-stats{display:flex;gap:36px;flex-wrap:wrap}
+.stat b{font-family:'Sora',sans-serif;font-size:26px;display:block}
+.stat span{font-size:13px;color:#93A5C1;font-family:'IBM Plex Mono',monospace;letter-spacing:.04em}
+
+/* signature: mock Tosca execution console */
+.console{background:#0D2140;border:1px solid rgba(255,255,255,.12);border-radius:16px;box-shadow:0 30px 80px rgba(0,0,0,.45);overflow:hidden;font-family:'IBM Plex Mono',monospace;font-size:13.5px}
+.console-bar{display:flex;align-items:center;gap:8px;padding:12px 16px;background:rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.1)}
+.dot{width:11px;height:11px;border-radius:50%}
+.console-bar .title{margin-left:8px;color:#8FA5C6;font-size:12.5px;letter-spacing:.04em}
+.console-body{padding:18px 20px 22px}
+.run-row{display:flex;align-items:center;gap:12px;padding:9px 12px;border-radius:8px;margin-bottom:6px;background:rgba(255,255,255,.03);opacity:0;transform:translateY(6px);animation:rowIn .5s ease forwards}
+.run-row:nth-child(1){animation-delay:.3s}.run-row:nth-child(2){animation-delay:.9s}.run-row:nth-child(3){animation-delay:1.5s}.run-row:nth-child(4){animation-delay:2.1s}.run-row:nth-child(5){animation-delay:2.7s}.run-row:nth-child(6){animation-delay:3.3s}
+@keyframes rowIn{to{opacity:1;transform:translateY(0)}}
+.run-row .step{color:#C7D6EF;flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.run-row .tag{font-size:11px;font-weight:600;letter-spacing:.08em;padding:3px 10px;border-radius:5px}
+.tag.pass{background:rgba(25,179,107,.15);color:#3DDC97;border:1px solid rgba(61,220,151,.35)}
+.tag.run{background:rgba(255,183,3,.14);color:var(--amber);border:1px solid rgba(255,183,3,.4)}
+.console-footer{display:flex;justify-content:space-between;align-items:center;padding:12px 20px;border-top:1px solid rgba(255,255,255,.1);color:#8FA5C6;font-size:12px}
+.console-footer b{color:#3DDC97}
+@media (prefers-reduced-motion: reduce){.run-row{animation:none;opacity:1;transform:none} html{scroll-behavior:auto} .btn:hover{transform:none}}
+
+/* ---------- Trust strip ---------- */
+.trust{background:var(--white);border-bottom:1px solid var(--line)}
+.trust .container{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding:26px 24px}
+.trust-item{display:flex;align-items:center;gap:12px;font-weight:600;font-size:14.5px;color:var(--ink-2)}
+.trust-item svg{flex:none}
+
+/* ---------- Feature cards ---------- */
+.features{background:var(--white)}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.fcard{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:28px 24px;transition:transform .2s ease, box-shadow .2s ease}
+.fcard:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.fcard .icon{width:48px;height:48px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,var(--blue),var(--blue-deep));margin-bottom:18px;box-shadow:0 6px 16px rgba(27,91,255,.3)}
+.fcard h3{font-size:17.5px;margin-bottom:8px}
+.fcard p{font-size:14.5px;color:var(--slate)}
+
+/* ---------- Curriculum ---------- */
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.ccard{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:transform .2s ease, box-shadow .2s ease}
+.ccard:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg)}
+.ccard-top{padding:22px 24px 18px;border-bottom:1px dashed var(--line);display:flex;align-items:center;justify-content:space-between;gap:10px}
+.mod-code{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;letter-spacing:.1em;color:var(--blue);background:rgba(27,91,255,.08);border:1px solid rgba(27,91,255,.22);padding:4px 10px;border-radius:6px}
+.level{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--slate);letter-spacing:.06em}
+.ccard-body{padding:20px 24px 24px;flex:1;display:flex;flex-direction:column}
+.ccard h3{font-size:18px;margin-bottom:10px}
+.ccard ul{list-style:none;margin:0 0 20px;flex:1}
+.ccard li{font-size:14.5px;color:var(--slate);padding:5px 0 5px 24px;position:relative}
+.ccard li::before{content:"";position:absolute;left:2px;top:12px;width:12px;height:12px;background:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%2319B36B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>') no-repeat center/contain}
+.ccard .btn{width:100%}
+
+/* ---------- Program details ---------- */
+.program{background:var(--ink);color:#fff;position:relative;overflow:hidden}
+.program::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:44px 44px}
+.program .container{position:relative}
+.program .section-head h2{color:#fff}
+.program .section-head p{color:#A9B9D4}
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.pcard{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);border-radius:var(--radius);padding:26px 24px}
+.pcard .k{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#8FA5C6;margin-bottom:10px}
+.pcard .v{font-family:'Sora',sans-serif;font-weight:700;font-size:19px;margin-bottom:6px}
+.pcard p{font-size:13.5px;color:#A9B9D4}
+.timings{margin-top:44px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);border-radius:var(--radius);padding:30px 28px}
+.timings h3{font-size:20px;margin-bottom:20px}
+.timings .tz{font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:400;color:#8FA5C6}
+.tgrid2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.trow{display:flex;flex-direction:column;gap:4px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:16px 18px}
+.trow .tlabel{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--amber)}
+.trow .ttime{font-family:'Sora',sans-serif;font-weight:700;font-size:19px}
+.trow .tdays{font-size:13px;color:#A9B9D4}
+
+/* ---------- Trainer ---------- */
+.trainer .container{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center}
+.trainer-card{background:linear-gradient(160deg,var(--ink),var(--ink-2));border-radius:20px;padding:40px 36px;color:#fff;box-shadow:var(--shadow-lg);position:relative;overflow:hidden}
+.trainer-card::after{content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(27,91,255,.4),transparent 70%)}
+.avatar{width:88px;height:88px;border-radius:22px;background:linear-gradient(135deg,var(--amber),#FF8A00);display:grid;place-items:center;font-family:'Sora',sans-serif;font-weight:800;font-size:30px;color:var(--ink);margin-bottom:22px;box-shadow:0 10px 26px rgba(255,183,3,.35)}
+.trainer-card h3{font-size:26px;margin-bottom:4px}
+.trainer-card .role{font-family:'IBM Plex Mono',monospace;font-size:13px;color:#9FB2D0;letter-spacing:.06em;margin-bottom:20px}
+.trainer-card .contact-line{display:flex;align-items:center;gap:12px;padding:11px 0;border-top:1px solid rgba(255,255,255,.12);font-size:15px}
+.trainer-card .contact-line a:hover{color:var(--amber)}
+.why-list{list-style:none;margin-top:8px}
+.why-list li{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
+.why-list li:last-child{border-bottom:0}
+.why-num{font-family:'IBM Plex Mono',monospace;font-weight:600;color:var(--blue);font-size:14px;padding-top:2px}
+.why-list b{display:block;font-family:'Sora',sans-serif;font-size:16.5px;margin-bottom:3px}
+.why-list p{font-size:14.5px;color:var(--slate)}
+
+/* ---------- Certification path ---------- */
+.certs{background:var(--white)}
+.path{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;counter-reset:cert}
+.path::before{content:"";position:absolute;top:26px;left:12%;right:12%;height:2px;background:repeating-linear-gradient(90deg,var(--line) 0 10px,transparent 10px 18px)}
+.pnode{text-align:center;padding:0 18px;position:relative}
+.pnode .bubble{width:52px;height:52px;margin:0 auto 16px;border-radius:50%;background:var(--white);border:2.5px solid var(--blue);display:grid;place-items:center;font-family:'Sora',sans-serif;font-weight:800;color:var(--blue);position:relative;z-index:1}
+.pnode h4{font-size:16px;margin-bottom:6px}
+.pnode p{font-size:13.5px;color:var(--slate)}
+
+/* ---------- Testimonials ---------- */
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.tcard{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:28px 26px;display:flex;flex-direction:column;gap:18px}
+.tcard .quote{font-size:15px;color:var(--ink-2);flex:1}
+.tcard .quote::before{content:"“";font-family:'Sora',sans-serif;font-size:34px;color:var(--blue);display:block;line-height:.6;margin-bottom:10px}
+.tperson{display:flex;align-items:center;gap:12px}
+.tavatar{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-family:'Sora',sans-serif;font-weight:700;color:#fff;font-size:15px;overflow:hidden;flex:none}
+.tavatar img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+.tperson b{display:block;font-size:14.5px}
+.tperson span{font-size:12.5px;color:var(--slate);font-family:'IBM Plex Mono',monospace}
+
+/* ---------- FAQ ---------- */
+.faq details{background:var(--white);border:1px solid var(--line);border-radius:12px;margin-bottom:14px;overflow:hidden}
+.faq summary{cursor:pointer;padding:20px 24px;font-family:'Sora',sans-serif;font-weight:600;font-size:16px;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:22px;color:var(--blue);font-weight:400;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 24px 20px;color:var(--slate);font-size:15px}
+
+/* ---------- Contact ---------- */
+.contact{background:linear-gradient(180deg,var(--ink) 0%,var(--ink-2) 100%);color:#fff;position:relative;overflow:hidden}
+.contact::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:44px 44px}
+.contact .container{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.contact h2{font-size:clamp(28px,3.4vw,38px);margin-bottom:14px}
+.contact .sub{color:#A9B9D4;font-size:17px;margin-bottom:32px;max-width:440px}
+.cinfo{display:flex;flex-direction:column;gap:18px}
+.cinfo a{display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:16px 20px;font-weight:600;transition:background .15s}
+.cinfo a:hover{background:rgba(255,255,255,.12)}
+.cinfo .ic{width:40px;height:40px;border-radius:10px;background:rgba(27,91,255,.25);display:grid;place-items:center;flex:none}
+.cinfo small{display:block;font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#8FA5C6;letter-spacing:.08em;text-transform:uppercase;font-weight:400}
+.form-card{background:#fff;color:var(--ink);border-radius:18px;padding:34px 32px;box-shadow:0 30px 80px rgba(0,0,0,.4)}
+.form-card h3{font-size:21px;margin-bottom:6px}
+.form-card .fsub{font-size:14px;color:var(--slate);margin-bottom:24px}
+.field{margin-bottom:18px}
+.field label{display:block;font-size:13px;font-weight:600;margin-bottom:7px;color:var(--ink-2)}
+.field input,.field select,.field textarea{width:100%;padding:13px 14px;border:1.5px solid var(--line);border-radius:9px;font-family:inherit;font-size:15px;background:var(--paper);color:var(--ink);transition:border-color .15s}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--blue)}
+.form-note{font-size:12.5px;color:var(--slate);margin-top:14px;text-align:center}
+
+/* ---------- Footer ---------- */
+footer{background:#071224;color:#93A5C1;padding:64px 0 0}
+.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:48px;padding-bottom:48px}
+footer h4{color:#fff;font-size:16px;margin-bottom:18px}
+footer .about-txt{font-size:14.5px;max-width:360px;margin-top:16px}
+.socials{display:flex;gap:12px;margin-top:20px}
+.socials a{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border:1px solid rgba(255,255,255,.18);border-radius:9px;font-size:13.5px;font-weight:600;color:#C9D6EA;transition:background .15s,color .15s,border-color .15s}
+.socials a:hover{background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.35)}
+.flinks{list-style:none}
+.flinks li{margin-bottom:11px}
+.flinks a{font-size:14.5px}
+.flinks a:hover{color:#fff}
+.fbottom{border-top:1px solid rgba(255,255,255,.1);padding:22px 0;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13.5px}
+.fbottom a:hover{color:#fff}
+
+/* ---------- WhatsApp float ---------- */
+.wa-float{position:fixed;right:22px;bottom:22px;z-index:80;width:58px;height:58px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 12px 30px rgba(37,211,102,.45);transition:transform .15s}
+.wa-float:hover{transform:scale(1.08)}
+
+/* ---------- Responsive ---------- */
+@media (max-width:1020px){
+  .grid-4,.pgrid{grid-template-columns:repeat(2,1fr)}
+  .grid-3,.tgrid{grid-template-columns:repeat(2,1fr)}
+  .hero .container{grid-template-columns:1fr;gap:44px;padding-top:64px;padding-bottom:72px}
+  .trainer .container,.contact .container{grid-template-columns:1fr;gap:44px}
+  .path{grid-template-columns:repeat(2,1fr);gap:34px}
+  .path::before{display:none}
+  .trust .container{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:720px){
+  .section{padding:64px 0}
+  .grid-4,.grid-3,.tgrid,.pgrid,.tgrid2{grid-template-columns:1fr}
+  .nav-links{display:none;position:absolute;top:74px;left:0;right:0;background:#fff;flex-direction:column;padding:18px 24px;gap:16px;border-bottom:1px solid var(--line);box-shadow:var(--shadow)}
+  .nav-links.open{display:flex}
+  .menu-btn{display:block}
+  .nav-phone{display:none}
+  .path{grid-template-columns:1fr}
+  .topbar-left span:nth-child(2){display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- Top bar -->
+<div class="topbar">
+  <div class="container">
+    <div class="topbar-left">
+      <span>📞 <a href="tel:+916364542036">+91-6364542036</a></span>
+      <span>✉️ <a href="mailto:hdbhardwaj@zohomail.in">hdbhardwaj@zohomail.in</a></span>
+    </div>
+    <span>🟢 New batch enrolling now — limited seats</span>
+  </div>
+</div>
+
+<!-- Nav -->
+<nav class="main">
+  <div class="container">
+    <a class="brand" href="#top">
+      <div class="brand-mark">HB</div>
+      <div class="brand-text"><b>TOSCA Training</b><span>by HD Bhardwaj</span></div>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#curriculum">Curriculum</a>
+      <a href="#program">Program</a>
+      <a href="#trainer">Trainer</a>
+      <a href="#certification">Certification</a>
+      <a href="#testimonials">Reviews</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div class="nav-cta">
+      <span class="nav-phone">+91-6364542036</span>
+      <a class="btn btn-primary" href="#contact">Enroll Now</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<header class="hero" id="top">
+  <div class="container">
+    <div>
+      <div class="hero-badges">
+        <span class="pill">TRICENTIS TOSCA</span>
+        <span class="pill">LIVE ONLINE TRAINING</span>
+        <span class="pill">JOB-READY IN 8 WEEKS</span>
+      </div>
+      <h1>Become a <span class="hl">Tosca Automation</span> Specialist — Without Writing a Single Line of Code</h1>
+      <p class="lead">Master model-based, scriptless test automation with Tricentis Tosca through instructor-led live classes, real enterprise projects, and complete certification &amp; interview preparation.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#contact">Book a Free Demo Class</a>
+        <a class="btn btn-light" href="#curriculum">View Curriculum</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><b>18+</b><span>YEARS QA EXPERIENCE</span></div>
+        <div class="stat"><b>500+</b><span>PROFESSIONALS TRAINED</span></div>
+        <div class="stat"><b>100%</b><span>HANDS-ON PROJECTS</span></div>
+      </div>
+    </div>
+    <div class="console" aria-hidden="true">
+      <div class="console-bar">
+        <span class="dot" style="background:#FF5F57"></span>
+        <span class="dot" style="background:#FEBC2E"></span>
+        <span class="dot" style="background:#28C840"></span>
+        <span class="title">Tosca Commander — ExecutionList: Regression_Suite</span>
+      </div>
+      <div class="console-body">
+        <div class="run-row"><span class="step">01 · Scan application &amp; create Modules</span><span class="tag pass">PASSED</span></div>
+        <div class="run-row"><span class="step">02 · Build TestCases (drag &amp; drop)</span><span class="tag pass">PASSED</span></div>
+        <div class="run-row"><span class="step">03 · Parameterize with TestCaseDesign</span><span class="tag pass">PASSED</span></div>
+        <div class="run-row"><span class="step">04 · API + UI end-to-end scenario</span><span class="tag pass">PASSED</span></div>
+        <div class="run-row"><span class="step">05 · Distributed Execution (DEX)</span><span class="tag pass">PASSED</span></div>
+        <div class="run-row"><span class="step">06 · You — hired as Tosca Consultant</span><span class="tag run">IN PROGRESS</span></div>
+      </div>
+      <div class="console-footer"><span>ExecutionList complete</span><span><b>6/6 steps</b> · 0 failed</span></div>
+    </div>
+  </div>
+</header>
+
+<!-- Trust strip -->
+<div class="trust">
+  <div class="container">
+    <div class="trust-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#19B36B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Tricentis Certification Roadmap (AS1 · AS2 · AE)</div>
+    <div class="trust-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1B5BFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Weekday &amp; Weekend Batches</div>
+    <div class="trust-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFB703" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>Real Enterprise Project Experience</div>
+    <div class="trust-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0E3FBE" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Interview &amp; Placement Support</div>
+  </div>
+</div>
+
+<!-- Features -->
+<section class="section features">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Why learn with us</span>
+      <h2>Training built the way Tosca projects actually run</h2>
+      <p>Every session mirrors how Tosca is used in real enterprise QA teams — not just theory slides.</p>
+    </div>
+    <div class="grid-4">
+      <div class="fcard">
+        <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <h3>Expert Trainer</h3>
+        <p>Learn directly from HD Bhardwaj — a Tosca professional with 18+ years of QA experience and 500+ learners trained.</p>
+      </div>
+      <div class="fcard">
+        <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+        <h3>100% Hands-On</h3>
+        <p>Build modules, test cases, and execution lists live in every class on real web, desktop, and API applications.</p>
+      </div>
+      <div class="fcard">
+        <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15a7 7 0 1 0 0-14 7 7 0 0 0 0 14z"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg></div>
+        <h3>Certification Guidance</h3>
+        <p>Structured preparation for Tricentis AS1, AS2 and Automation Engineer exams with mock tests and tips.</p>
+      </div>
+      <div class="fcard">
+        <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
+        <h3>Interview Preparation</h3>
+        <p>Resume building, real interview Q&amp;A, scenario-based mock interviews and referrals wherever possible.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Curriculum -->
+<section class="section" id="curriculum">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Curriculum</span>
+      <h2>Complete Tosca mastery — from first scan to CI/CD</h2>
+      <p>A structured path covering everything hiring managers expect from a Tosca automation consultant.</p>
+    </div>
+    <div class="grid-3">
+      <div class="ccard">
+        <div class="ccard-top"><span class="mod-code">MODULE 01</span><span class="level">FOUNDATION</span></div>
+        <div class="ccard-body">
+          <h3>Tosca Fundamentals &amp; Commander</h3>
+          <ul>
+            <li>Tosca architecture &amp; workspaces</li>
+            <li>Scanning applications into Modules</li>
+            <li>Creating &amp; structuring TestCases</li>
+            <li>ExecutionLists &amp; result analysis</li>
+          </ul>
+          <a class="btn btn-ghost" href="#contact">Enquire Now</a>
+        </div>
+      </div>
+      <div class="ccard">
+        <div class="ccard-top"><span class="mod-code">MODULE 02</span><span class="level">CORE</span></div>
+        <div class="ccard-body">
+          <h3>Test Case Design &amp; Data Management</h3>
+          <ul>
+            <li>TestCaseDesign (TCD) methodology</li>
+            <li>Parameters, instances &amp; templates</li>
+            <li>Test Data Management (TDM)</li>
+            <li>Buffers, libraries &amp; reusable blocks</li>
+          </ul>
+          <a class="btn btn-ghost" href="#contact">Enquire Now</a>
+        </div>
+      </div>
+      <div class="ccard">
+        <div class="ccard-top"><span class="mod-code">MODULE 03</span><span class="level">CORE</span></div>
+        <div class="ccard-body">
+          <h3>Web, Desktop &amp; SAP Automation</h3>
+          <ul>
+            <li>Web UI automation deep-dive</li>
+            <li>Desktop application automation</li>
+            <li>SAP GUI &amp; SAP Fiori with Tosca</li>
+            <li>Recovery scenarios &amp; synchronization</li>
+          </ul>
+          <a class="btn btn-ghost" href="#contact">Enquire Now</a>
+        </div>
+      </div>
+      <div class="ccard">
+        <div class="ccard-top"><span class="mod-code">MODULE 04</span><span class="level">ADVANCED</span></div>
+        <div class="ccard-body">
+          <h3>API Testing with Tosca</h3>
+          <ul>
+            <li>Tosca API Scan &amp; API modules</li>
+            <li>REST &amp; SOAP service testing</li>
+            <li>End-to-end UI + API scenarios</li>
+            <li>Response validation &amp; buffering</li>
+          </ul>
+          <a class="btn btn-ghost" href="#contact">Enquire Now</a>
+        </div>
+      </div>
+      <div class="ccard">
+        <div class="ccard-top"><span class="mod-code">MODULE 05</span><span class="level">ADVANCED</span></div>
+        <div class="ccard-body">
+          <h3>DEX, CI/CD &amp; Enterprise Practices</h3>
+          <ul>
+            <li>Distributed Execution (DEX) setup</li>
+            <li>Jenkins / Azure DevOps integration</li>
+            <li>Tosca Query Language (TQL)</li>
+            <li>Version control &amp; multi-user workspaces</li>
+          </ul>
+          <a class="btn btn-ghost" href="#contact">Enquire Now</a>
+        </div>
+      </div>
+      <div class="ccard">
+        <div class="ccard-top"><span class="mod-code">MODULE 06</span><span class="level">CAPSTONE</span></div>
+        <div class="ccard-body">
+          <h3>Live Project + Career Launch</h3>
+          <ul>
+            <li>End-to-end regression suite build</li>
+            <li>Certification (AS1/AS2) preparation</li>
+            <li>Resume &amp; LinkedIn optimization</li>
+            <li>Mock interviews with feedback</li>
+          </ul>
+          <a class="btn btn-ghost" href="#contact">Enquire Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Program details -->
+<section class="section program" id="program">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow" style="color:var(--amber)">Program details</span>
+      <h2>Everything you need to know before you start</h2>
+      <p>Flexible schedules designed for working professionals and freshers alike.</p>
+    </div>
+    <div class="pgrid">
+      <div class="pcard"><div class="k">Duration</div><div class="v">6–8 Weeks</div><p>60+ hours of live instructor-led sessions plus practice assignments.</p></div>
+      <div class="pcard"><div class="k">Mode</div><div class="v">Live Online</div><p>Interactive classes with screen-share, doubt clearing, and session recordings.</p></div>
+      <div class="pcard"><div class="k">Batches</div><div class="v">Daily &amp; Weekend</div><p>Two daily slots plus dedicated weekend batches — see full timings below.</p></div>
+      <div class="pcard"><div class="k">Eligibility</div><div class="v">No Coding Needed</div><p>Ideal for manual testers, freshers, and professionals switching to automation.</p></div>
+    </div>
+    <div class="timings">
+      <h3>Batch timings <span class="tz">(IST)</span></h3>
+      <div class="tgrid2">
+        <div class="trow">
+          <div class="tlabel">Weekday — Morning</div>
+          <div class="ttime">6:00 AM – 8:00 AM</div>
+          <div class="tdays">Monday to Friday</div>
+        </div>
+        <div class="trow">
+          <div class="tlabel">Weekday — Evening</div>
+          <div class="ttime">8:00 PM – 10:00 PM</div>
+          <div class="tdays">Monday to Friday</div>
+        </div>
+        <div class="trow">
+          <div class="tlabel">Weekend — Morning</div>
+          <div class="ttime">9:00 AM – 12:00 PM</div>
+          <div class="tdays">Saturday &amp; Sunday</div>
+        </div>
+        <div class="trow">
+          <div class="tlabel">Weekend — Afternoon</div>
+          <div class="ttime">2:00 PM – 5:00 PM</div>
+          <div class="tdays">Saturday &amp; Sunday</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Trainer -->
+<section class="section trainer" id="trainer">
+  <div class="container">
+    <div class="trainer-card">
+      <div class="avatar">HB</div>
+      <h3>HD Bhardwaj</h3>
+      <div class="role">TOSCA AUTOMATION TRAINER &amp; CONSULTANT</div>
+      <p style="color:#C7D6EF;font-size:15px;margin-bottom:24px">With 18+ years of QA and automation experience and 500+ professionals trained, HD Bhardwaj is dedicated to making every learner project-ready. Training is personal here — small batches, individual attention, and support that continues until you're placed.</p>
+      <div class="contact-line"><span>📞</span><a href="tel:+916364542036">+91-6364542036</a></div>
+      <div class="contact-line"><span>✉️</span><a href="mailto:hdbhardwaj@zohomail.in">hdbhardwaj@zohomail.in</a></div>
+      <div class="contact-line"><span>💬</span><a href="https://wa.me/916364542036?text=Hi%2C%20I%20want%20to%20know%20more%20about%20TOSCA%20training." target="_blank" rel="noopener">WhatsApp for quick queries</a></div>
+    </div>
+    <div>
+      <span class="eyebrow">Meet your trainer</span>
+      <h2 style="font-size:clamp(26px,3.2vw,36px);margin-bottom:8px">What makes this training different</h2>
+      <ul class="why-list">
+        <li><span class="why-num">/01</span><div><b>Learn from real projects, not slides</b><p>Every concept is taught on live applications the same way it's done inside enterprise QA teams.</p></div></li>
+        <li><span class="why-num">/02</span><div><b>Small batches, individual attention</b><p>Limited seats per batch so every learner gets dedicated doubt-clearing time and personal review of their test cases.</p></div></li>
+        <li><span class="why-num">/03</span><div><b>Support until you succeed</b><p>Lifetime access to recordings, revision sessions, and guidance that continues after the course ends.</p></div></li>
+        <li><span class="why-num">/04</span><div><b>Career-first approach</b><p>Certification prep, resume building and mock interviews are part of the program — not paid add-ons.</p></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Certification path -->
+<section class="section certs" id="certification">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Certification roadmap</span>
+      <h2>Your path to becoming a certified Tosca professional</h2>
+      <p>We prepare you step-by-step for the official Tricentis certification track.</p>
+    </div>
+    <div class="path">
+      <div class="pnode"><div class="bubble">1</div><h4>Tosca Fundamentals</h4><p>Core concepts, Commander basics and your first automated test case.</p></div>
+      <div class="pnode"><div class="bubble">2</div><h4>Automation Specialist L1</h4><p>Tricentis AS1 — modules, test cases, execution and reporting.</p></div>
+      <div class="pnode"><div class="bubble">3</div><h4>Automation Specialist L2</h4><p>Tricentis AS2 — TestCaseDesign, TDM, reusability and advanced flows.</p></div>
+      <div class="pnode"><div class="bubble">4</div><h4>Automation Engineer</h4><p>AE-level skills — API, DEX, CI/CD and enterprise project readiness.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="section" id="testimonials">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Success stories</span>
+      <h2>Learners who made the switch</h2>
+      <p>From manual testing to Tosca automation roles at leading companies.</p>
+    </div>
+    <!-- ============================================================
+     TESTIMONIALS — HOW TO REPLACE WITH REAL STUDENTS
+     ============================================================
+     The three cards below are SAMPLE placeholders. To add a real
+     student, copy one .tcard block and edit:
+
+     1. The quote text inside <p class="quote">…</p>
+     2. Name and job title inside .tperson
+     3. Photo: replace the initials <div class="tavatar">XX</div> with
+        <div class="tavatar"><img src="images/student-name.jpg" alt="Student name"></div>
+        (put photos in an "images" folder next to this HTML file;
+        square photos around 200x200px work best)
+
+     You can add as many cards as you like — the grid adjusts
+     automatically. Delete these sample cards once real ones exist.
+     ============================================================ -->
+    <div class="tgrid">
+      <div class="tcard">
+        <p class="quote">I was a manual tester for 4 years and worried about coding. Tosca changed everything — within 3 months of completing the course I cleared AS1 and moved into an automation role.</p>
+        <div class="tperson"><div class="tavatar" style="background:#1B5BFF">PK</div><div><b>Priya K.</b><span>QA AUTOMATION ENGINEER</span></div></div>
+      </div>
+      <div class="tcard">
+        <p class="quote">The live project on SAP automation was the highlight. In my interview, I could confidently explain DEX setup and TCD because I had actually done it, not just read about it.</p>
+        <div class="tperson"><div class="tavatar" style="background:#19B36B">RS</div><div><b>Rahul S.</b><span>TOSCA CONSULTANT</span></div></div>
+      </div>
+      <div class="tcard">
+        <p class="quote">Small batch size made a huge difference. Sir personally reviewed my test cases and prepared me for interview questions. Got placed within weeks of finishing the course.</p>
+        <div class="tperson"><div class="tavatar" style="background:#FF8A00">AM</div><div><b>Ananya M.</b><span>TEST AUTOMATION SPECIALIST</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section faq" id="faq">
+  <div class="container" style="max-width:860px">
+    <div class="section-head">
+      <span class="eyebrow">FAQ</span>
+      <h2>Frequently asked questions</h2>
+    </div>
+    <details>
+      <summary>Do I need programming knowledge to learn Tosca?</summary>
+      <p>No. Tosca is a scriptless, model-based automation tool. Manual testers and complete freshers can learn it comfortably — that's exactly who this course is designed for.</p>
+    </details>
+    <details>
+      <summary>Will I get class recordings?</summary>
+      <p>Yes. Every live session is recorded and you get lifetime access to the recordings for revision.</p>
+    </details>
+    <details>
+      <summary>Is Tosca software provided for practice?</summary>
+      <p>You'll be guided to set up the official Tricentis Tosca trial environment on your own system, and all practice applications and materials are provided during the course.</p>
+    </details>
+    <details>
+      <summary>Do you help with Tricentis certification?</summary>
+      <p>Yes. The course includes dedicated preparation for the AS1 and AS2 certifications, including mock tests and exam strategies.</p>
+    </details>
+    <details>
+      <summary>What placement support is included?</summary>
+      <p>Resume building, LinkedIn profile optimization, real interview Q&amp;A banks, scenario-based mock interviews, and job referrals wherever possible.</p>
+    </details>
+    <details>
+      <summary>How do I join the next batch?</summary>
+      <p>Call or WhatsApp +91-6364542036, or send an enquiry through the form below. You can attend a free demo class before enrolling.</p>
+    </details>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="section contact" id="contact">
+  <div class="container">
+    <div>
+      <span class="eyebrow" style="color:var(--amber)">Get in touch</span>
+      <h2>Start your Tosca journey today</h2>
+      <p class="sub">Book a free demo class or ask anything about the course, batches, or fees. You'll get a response within a few hours.</p>
+      <div class="cinfo">
+        <a href="tel:+916364542036"><span class="ic">📞</span><span><small>Call or WhatsApp</small>+91-6364542036</span></a>
+        <a href="mailto:hdbhardwaj@zohomail.in"><span class="ic">✉️</span><span><small>Email</small>hdbhardwaj@zohomail.in</span></a>
+        <a href="https://wa.me/916364542036?text=Hi%2C%20I%20want%20to%20book%20a%20free%20TOSCA%20demo%20class." target="_blank" rel="noopener"><span class="ic">💬</span><span><small>Instant chat</small>Message on WhatsApp</span></a>
+      </div>
+    </div>
+    <div class="form-card">
+      <h3>Request a callback</h3>
+      <p class="fsub">Fill this in and we'll reach out with batch details and a demo invite.</p>
+      <div class="field"><label for="fname">Full name</label><input id="fname" type="text" placeholder="Your name"></div>
+      <div class="field"><label for="fphone">Phone / WhatsApp</label><input id="fphone" type="tel" placeholder="+91"></div>
+      <div class="field"><label for="fexp">Your background</label>
+        <select id="fexp">
+          <option>Manual tester moving to automation</option>
+          <option>Fresher / student</option>
+          <option>Automation engineer (other tools)</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="field"><label for="fmsg">Message (optional)</label><textarea id="fmsg" rows="3" placeholder="Preferred batch timing, questions…"></textarea></div>
+      <button class="btn btn-primary" style="width:100%" onclick="sendEnquiry()">Send enquiry</button>
+      <p class="form-note">Submitting opens your email app with the details pre-filled — just press send.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="fgrid">
+      <div>
+        <a class="brand" href="#top" style="align-items:flex-start">
+          <div class="brand-mark">HB</div>
+          <div class="brand-text" style="color:#fff"><b>TOSCA Training</b><span style="color:#93A5C1">by HD Bhardwaj</span></div>
+        </a>
+        <p class="about-txt">Empowering QA professionals with industry-ready Tricentis Tosca training — turning manual testers into confident, certified automation specialists.</p>
+        <div class="socials">
+          <a href="https://www.linkedin.com/in/hd-bhardwaj-ab585540a/" target="_blank" rel="noopener" aria-label="LinkedIn profile of HD Bhardwaj">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.119 20.452H3.554V9h3.565v11.452z"/></svg>
+            <span>LinkedIn</span>
+          </a>
+          <a href="https://www.youtube.com/@LetsAutomateTesting" target="_blank" rel="noopener" aria-label="YouTube channel Lets Automate Testing">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            <span>YouTube</span>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4>Quick links</h4>
+        <ul class="flinks">
+          <li><a href="#curriculum">Curriculum</a></li>
+          <li><a href="#program">Program details</a></li>
+          <li><a href="#certification">Certification path</a></li>
+          <li><a href="#testimonials">Success stories</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul class="flinks">
+          <li><a href="tel:+916364542036">+91-6364542036</a></li>
+          <li><a href="mailto:hdbhardwaj@zohomail.in">hdbhardwaj@zohomail.in</a></li>
+          <li><a href="https://wa.me/916364542036" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><a href="https://www.linkedin.com/in/hd-bhardwaj-ab585540a/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://www.youtube.com/@LetsAutomateTesting" target="_blank" rel="noopener">YouTube — Lets Automate Testing</a></li>
+          <li>Live online — join from anywhere</li>
+        </ul>
+      </div>
+    </div>
+    <div class="fbottom">
+      <span>© 2026 TOSCA Training by HD Bhardwaj. All rights reserved.</span>
+      <span>Tricentis and Tosca are trademarks of Tricentis GmbH. This is an independent training program.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp float -->
+<a class="wa-float" href="https://wa.me/916364542036?text=Hello!%20I%20want%20to%20know%20more%20about%20your%20TOSCA%20training." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+document.getElementById('menuBtn').addEventListener('click', function(){
+  document.getElementById('navLinks').classList.toggle('open');
+});
+document.querySelectorAll('#navLinks a').forEach(function(a){
+  a.addEventListener('click', function(){ document.getElementById('navLinks').classList.remove('open'); });
+});
+function sendEnquiry(){
+  var name = document.getElementById('fname').value.trim();
+  var phone = document.getElementById('fphone').value.trim();
+  var exp = document.getElementById('fexp').value;
+  var msg = document.getElementById('fmsg').value.trim();
+  var body = 'Hi HD Bhardwaj,%0D%0A%0D%0AI would like to enquire about TOSCA training.%0D%0A%0D%0AName: ' + encodeURIComponent(name) +
+             '%0D%0APhone: ' + encodeURIComponent(phone) +
+             '%0D%0ABackground: ' + encodeURIComponent(exp) +
+             '%0D%0AMessage: ' + encodeURIComponent(msg);
+  window.location.href = 'mailto:hdbhardwaj@zohomail.in?subject=' + encodeURIComponent('TOSCA Training Enquiry - ' + name) + '&body=' + body;
+}
+</script>
+</body>
+</html>
