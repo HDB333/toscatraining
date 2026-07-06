@@ -202,9 +202,11 @@ nav.main .container{display:flex;align-items:center;justify-content:space-betwee
 .cinfo a:hover{background:rgba(255,255,255,.12)}
 .cinfo .ic{width:40px;height:40px;border-radius:10px;background:rgba(27,91,255,.25);display:grid;place-items:center;flex:none}
 .cinfo small{display:block;font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#8FA5C6;letter-spacing:.08em;text-transform:uppercase;font-weight:400}
-.form-card{background:#fff;color:var(--ink);border-radius:18px;padding:34px 32px;box-shadow:0 30px 80px rgba(0,0,0,.4)}
-.form-card h3{font-size:21px;margin-bottom:6px}
-.form-card .fsub{font-size:14px;color:var(--slate);margin-bottom:24px}
+.form-card{background:#fff;color:var(--ink);border-radius:18px;padding:28px 24px;box-shadow:0 30px 80px rgba(0,0,0,.4)}
+.form-card h3{font-size:21px;margin-bottom:6px;padding:0 8px}
+.form-card .fsub{font-size:14px;color:var(--slate);margin-bottom:16px;padding:0 8px}
+.zoho-frame{width:100%;height:760px;border:0;border-radius:12px;background:var(--paper)}
+@media (max-width:720px){.zoho-frame{height:820px}}
 .field{margin-bottom:18px}
 .field label{display:block;font-size:13px;font-weight:600;margin-bottom:7px;color:var(--ink-2)}
 .field input,.field select,.field textarea{width:100%;padding:13px 14px;border:1.5px solid var(--line);border-radius:9px;font-family:inherit;font-size:15px;background:var(--paper);color:var(--ink);transition:border-color .15s}
@@ -638,19 +640,9 @@ footer .about-txt{font-size:14.5px;max-width:360px;margin-top:16px}
     <div class="form-card">
       <h3>Request a callback</h3>
       <p class="fsub">Fill this in and we'll reach out with batch details and a demo invite.</p>
-      <div class="field"><label for="fname">Full name</label><input id="fname" type="text" placeholder="Your name"></div>
-      <div class="field"><label for="fphone">Phone / WhatsApp</label><input id="fphone" type="tel" placeholder="+91"></div>
-      <div class="field"><label for="fexp">Your background</label>
-        <select id="fexp">
-          <option>Manual tester moving to automation</option>
-          <option>Fresher / student</option>
-          <option>Automation engineer (other tools)</option>
-          <option>Other</option>
-        </select>
-      </div>
-      <div class="field"><label for="fmsg">Message (optional)</label><textarea id="fmsg" rows="3" placeholder="Preferred batch timing, questions…"></textarea></div>
-      <button class="btn btn-primary" style="width:100%" onclick="sendEnquiry()">Send enquiry</button>
-      <p class="form-note">Submitting opens your email app with the details pre-filled — just press send.</p>
+      <!-- Zoho Forms embed — submissions go to hdbhardwaj@zohomail.in account -->
+      <iframe class="zoho-frame" src="https://forms.zohopublic.in/hdbhardwajzoho1/form/TOSCATrainingEnquiry/formperma/ZXxyq4xMHhO_PXs54kwywPxeHkkkMflY_vTkup0Lgxs" title="TOSCA Training Enquiry Form" loading="lazy"></iframe>
+      <p class="form-note">Form not loading? <a href="https://forms.zohopublic.in/hdbhardwajzoho1/form/TOSCATrainingEnquiry/formperma/ZXxyq4xMHhO_PXs54kwywPxeHkkkMflY_vTkup0Lgxs" target="_blank" rel="noopener" style="color:var(--blue);font-weight:600">Open the enquiry form in a new tab</a> or WhatsApp us at +91-6364542036.</p>
     </div>
   </div>
 </section>
@@ -717,17 +709,6 @@ document.getElementById('menuBtn').addEventListener('click', function(){
 document.querySelectorAll('#navLinks a').forEach(function(a){
   a.addEventListener('click', function(){ document.getElementById('navLinks').classList.remove('open'); });
 });
-function sendEnquiry(){
-  var name = document.getElementById('fname').value.trim();
-  var phone = document.getElementById('fphone').value.trim();
-  var exp = document.getElementById('fexp').value;
-  var msg = document.getElementById('fmsg').value.trim();
-  var body = 'Hi HD Bhardwaj,%0D%0A%0D%0AI would like to enquire about TOSCA training.%0D%0A%0D%0AName: ' + encodeURIComponent(name) +
-             '%0D%0APhone: ' + encodeURIComponent(phone) +
-             '%0D%0ABackground: ' + encodeURIComponent(exp) +
-             '%0D%0AMessage: ' + encodeURIComponent(msg);
-  window.location.href = 'mailto:hdbhardwaj@zohomail.in?subject=' + encodeURIComponent('TOSCA Training Enquiry - ' + name) + '&body=' + body;
-}
 </script>
 </body>
 </html>
