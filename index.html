@@ -205,8 +205,7 @@ nav.main .container{display:flex;align-items:center;justify-content:space-betwee
 .form-card{background:#fff;color:var(--ink);border-radius:18px;padding:28px 24px;box-shadow:0 30px 80px rgba(0,0,0,.4)}
 .form-card h3{font-size:21px;margin-bottom:6px;padding:0 8px}
 .form-card .fsub{font-size:14px;color:var(--slate);margin-bottom:16px;padding:0 8px}
-.zoho-frame{width:100%;height:760px;border:0;border-radius:12px;background:var(--paper)}
-@media (max-width:720px){.zoho-frame{height:820px}}
+.zoho-wrap{width:100%;border-radius:12px;overflow:hidden;background:var(--paper);min-height:400px}
 .field{margin-bottom:18px}
 .field label{display:block;font-size:13px;font-weight:600;margin-bottom:7px;color:var(--ink-2)}
 .field input,.field select,.field textarea{width:100%;padding:13px 14px;border:1.5px solid var(--line);border-radius:9px;font-family:inherit;font-size:15px;background:var(--paper);color:var(--ink);transition:border-color .15s}
@@ -641,7 +640,7 @@ footer .about-txt{font-size:14.5px;max-width:360px;margin-top:16px}
       <h3>Request a callback</h3>
       <p class="fsub">Fill this in and we'll reach out with batch details and a demo invite.</p>
       <!-- Zoho Forms embed — submissions go to hdbhardwaj@zohomail.in account -->
-      <iframe class="zoho-frame" src="https://forms.zohopublic.in/hdbhardwajzoho1/form/TOSCATrainingEnquiry/formperma/ZXxyq4xMHhO_PXs54kwywPxeHkkkMflY_vTkup0Lgxs" title="TOSCA Training Enquiry Form" loading="lazy"></iframe>
+      <div id="zohoFormWrap" class="zoho-wrap"></div>
       <p class="form-note">Form not loading? <a href="https://forms.zohopublic.in/hdbhardwajzoho1/form/TOSCATrainingEnquiry/formperma/ZXxyq4xMHhO_PXs54kwywPxeHkkkMflY_vTkup0Lgxs" target="_blank" rel="noopener" style="color:var(--blue);font-weight:600">Open the enquiry form in a new tab</a> or WhatsApp us at +91-6364542036.</p>
     </div>
   </div>
@@ -709,6 +708,35 @@ document.getElementById('menuBtn').addEventListener('click', function(){
 document.querySelectorAll('#navLinks a').forEach(function(a){
   a.addEventListener('click', function(){ document.getElementById('navLinks').classList.remove('open'); });
 });
+
+/* --- Zoho Forms auto-resizing embed --- */
+(function () {
+  try {
+    var permaPath = 'ZXxyq4xMHhO_PXs54kwywPxeHkkkMflY_vTkup0Lgxs';
+    var f = document.createElement('iframe');
+    f.src = 'https://forms.zohopublic.in/hdbhardwajzoho1/form/TOSCATrainingEnquiry/formperma/' + permaPath + '?zf_rszfm=1';
+    f.style.border = 'none';
+    f.style.width = '100%';
+    f.style.height = '820px';
+    f.style.transition = 'all 0.4s ease';
+    f.style.borderRadius = '12px';
+    f.setAttribute('title', 'TOSCA Training Enquiry Form');
+    f.setAttribute('aria-label', 'TOSCA Training Enquiry Form');
+    document.getElementById('zohoFormWrap').appendChild(f);
+    window.addEventListener('message', function (event) {
+      var d = event.data;
+      if (d && d.constructor === String) {
+        var parts = d.split('|');
+        if (parts.length === 2 || parts.length === 3) {
+          if (f.src.indexOf(parts[0]) > 0) {
+            var newH = (parseInt(parts[1], 10) + 16) + 'px';
+            if (f.style.height !== newH) { f.style.height = newH; }
+          }
+        }
+      }
+    }, false);
+  } catch (e) {}
+})();
 </script>
 </body>
 </html>
